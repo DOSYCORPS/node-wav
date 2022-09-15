@@ -1,7 +1,7 @@
 {
   "name": "@dosy/wav",
   "description": "`Reader` and `Writer` streams for Microsoft WAVE audio files, forked from ToolTallNate's original.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "contributors": [
     "@dosy",

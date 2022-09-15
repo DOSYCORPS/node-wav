@@ -1,3 +1,8 @@
+1.1.1 / 2022-09-15
+==================
+
+- Merge in https://github.com/TooTallNate/node-wav/pull/16
+- Update dependencies
 
 1.0.0 / 2015-05-01
 ==================

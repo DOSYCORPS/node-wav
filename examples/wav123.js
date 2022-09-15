@@ -4,14 +4,14 @@
  * via `node-speaker`.
  */
 
-var Reader = require('../').Reader;
-var Speaker = require('speaker');
+const Reader = require('../').Reader;
+const Speaker = require('speaker');
 
-var reader = new Reader();
+const reader = new Reader();
 
 reader.on('format', function (format) {
   console.error('format:', format);
-  var s = new Speaker(format);
+  const s = new Speaker(format);
   reader.pipe(s);
 });
 

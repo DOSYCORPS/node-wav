@@ -1,10 +1,13 @@
 {
-  "name": "wav",
+  "name": "@dosy/wav",
   "description": "`Reader` and `Writer` streams for Microsoft WAVE audio files",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
-  "author": "Nathan Rajlich <nathan@tootallnate.net>",
-  "repository": "TooTallNate/node-wav",
+  "contributors": [
+    "@dosy",
+    "Nathan Rajlich <nathan@tootallnate.net>"
+  ],
+  "repository": "https://github.com/DOSYCORPS/node-wav",
   "dependencies": {
     "buffer-alloc": "latest",
     "buffer-from": "latest",

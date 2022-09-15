@@ -4,18 +4,18 @@
  * Module dependencies.
  */
 
-var fs = require('fs');
-var path = require('path');
-var assert = require('assert');
-var Reader = require('../').Reader;
+const fs = require('fs');
+const path = require('path');
+const assert = require('assert');
+const Reader = require('../').Reader;
 
 describe('Reader', function () {
   describe('RIFF - Little-endian', function () {
     describe('1up.wav', function () {
-      var fixture = path.resolve(__dirname, 'fixtures', '1up.wav');
+      const fixture = path.resolve(__dirname, 'fixtures', '1up.wav');
 
       it('should emit a "format" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('format', function (format) {
           assert.equal(1, format.audioFormat);
           assert.equal(1, format.channels);
@@ -28,17 +28,17 @@ describe('Reader', function () {
       });
 
       it('should emit an "end" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('end', done);
         fs.createReadStream(fixture).pipe(reader).resume();
       });
     });
 
     describe('gameover.wav', function () {
-      var fixture = path.resolve(__dirname, 'fixtures', 'gameover.wav');
+      const fixture = path.resolve(__dirname, 'fixtures', 'gameover.wav');
 
       it('should emit a "format" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('format', function (format) {
           // wave format
           assert.equal('RIFF', this.riffId);
@@ -56,17 +56,17 @@ describe('Reader', function () {
       });
 
       it('should emit an "end" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('end', done);
         fs.createReadStream(fixture).pipe(reader).resume();
       });
     });
 
     describe('M1F1-float32-AFsp.wav', function () {
-      var fixture = path.resolve(__dirname, 'fixtures', 'M1F1-float32-AFsp.wav');
+      const fixture = path.resolve(__dirname, 'fixtures', 'M1F1-float32-AFsp.wav');
 
       it('should emit a "format" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('format', function (format) {
           assert.equal(3, format.audioFormat);
           assert.equal(2, format.channels);
@@ -80,17 +80,17 @@ describe('Reader', function () {
       });
 
       it('should emit an "end" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('end', done);
         fs.createReadStream(fixture).pipe(reader).resume();
       });
     });
 
     describe('M1F1-float64-AFsp.wav', function () {
-      var fixture = path.resolve(__dirname, 'fixtures', 'M1F1-float64-AFsp.wav');
+      const fixture = path.resolve(__dirname, 'fixtures', 'M1F1-float64-AFsp.wav');
 
       it('should emit a "format" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('format', function (format) {
           assert.equal(3, format.audioFormat);
           assert.equal(2, format.channels);
@@ -104,7 +104,7 @@ describe('Reader', function () {
       });
 
       it('should emit an "end" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('end', done);
         fs.createReadStream(fixture).pipe(reader).resume();
       });
@@ -113,10 +113,10 @@ describe('Reader', function () {
 
   describe('RIFX - Big-endian', function () {
     describe('gameover-rifx.wav', function () {
-      var fixture = path.resolve(__dirname, 'fixtures', 'gameover-rifx.wav');
+      const fixture = path.resolve(__dirname, 'fixtures', 'gameover-rifx.wav');
 
       it('should emit a "format" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('format', function (format) {
           // wave format
           assert.equal('RIFX', this.riffId);
@@ -134,7 +134,7 @@ describe('Reader', function () {
       });
 
       it('should emit an "end" event', function (done) {
-        var reader = new Reader();
+        const reader = new Reader();
         reader.on('end', done);
         fs.createReadStream(fixture).pipe(reader).resume();
       });
